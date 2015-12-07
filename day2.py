@@ -1,4 +1,3 @@
-import collections
 import re
 from operator import mul
 
