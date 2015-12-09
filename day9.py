@@ -39,14 +39,9 @@ for path in permutations(stars):
         longest_distance = path_distance
         longest_path = path
 
-p_str = ""
-for star in shortest_path:
-    p_str += '%s%s' % ('->' if len(p_str) else '', star)
-print "shortest.  %s: %d" % (p_str, shortest_distance)
+print "shortest.  %s: %d" % ("->".join(shortest_path), shortest_distance)
+print "longest.  %s: %d" % ("->".join(longest_path), longest_distance)
 
-for star in longest_path:
-    p_str += '%s%s' % ('->' if len(p_str) else '', star)
-print "longest.  %s: %d" % (p_str, longest_distance)
 ##                         A N S W E R S
 ##  shortest.  Arbre->Tambi->Snowdin->Faerun->Straylight->Norrath->AlphaCentauri->Tristram: 141
 ##  longest.  Arbre->Tambi->Snowdin->Faerun->Straylight->Norrath->AlphaCentauri->Tristram->Faerun->Norrath->Tambi->Straylight->Snowdin->Tristram->Arbre->AlphaCentauri: 736
