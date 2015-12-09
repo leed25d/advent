@@ -42,6 +42,6 @@ for path in permutations(stars):
 print "shortest.  %s: %d" % ("->".join(shortest_path), shortest_distance)
 print "longest.  %s: %d" % ("->".join(longest_path), longest_distance)
 
-##                         A N S W E R S
+##
 ##  shortest.  Arbre->Tambi->Snowdin->Faerun->Straylight->Norrath->AlphaCentauri->Tristram: 141
-##  longest.  Arbre->Tambi->Snowdin->Faerun->Straylight->Norrath->AlphaCentauri->Tristram->Faerun->Norrath->Tambi->Straylight->Snowdin->Tristram->Arbre->AlphaCentauri: 736
+##  longest.  Faerun->Norrath->Tambi->Straylight->Snowdin->Tristram->Arbre->AlphaCentauri: 736
