@@ -14,7 +14,7 @@ distances = dict()
 
 with open(in_file) as f:
     for line in f:
-        p = re.match(r'([^\s]*)\sto\s([^\s]*)\s=\s([0-9]*)', line)
+        p = re.match(r'(\w+) to (\w+) = (\d+)', line)
         try:
             star1, star2, distance = p.groups()
             s = frozenset((star1, star2))
