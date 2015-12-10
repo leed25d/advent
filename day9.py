@@ -29,9 +29,7 @@ longest_path = 0
 longest_distance = None
 
 for path in permutations(stars):
-    path_distance = 0
-    for star1, star2 in pairwise(path):
-        path_distance += distances.get(frozenset((star1, star2)), 0)
+    path_distance = sum([distances.get(frozenset((s1, s2)), 0) for s1, s2 in pairwise(path)])
     if shortest_distance is None or path_distance < shortest_distance:
         shortest_distance = path_distance
         shortest_path = path
