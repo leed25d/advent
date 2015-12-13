@@ -1,9 +1,9 @@
 ##
-import collections
-import itertools
+from collections import defaultdict
+from itertools import permutations
 import re
 
-partners = collections.defaultdict(int)
+partners = defaultdict(int)
 for line in open('day13.data'):
     parsed = re.match('(.*) would (.*) (\d+) happiness.*to (.*)\.', line).groups()
     feeling = int(parsed[2]) * (1 if parsed[1] == 'gain' else -1)
@@ -12,7 +12,7 @@ for line in open('day13.data'):
 
 def max_hapiness(people):
     most = None
-    for arrangement in itertools.permutations(people):
+    for arrangement in permutations(people):
         arrangement += (arrangement[0],)
         hapiness = 0
         for i in xrange(len(arrangement) - 1):
@@ -22,7 +22,7 @@ def max_hapiness(people):
     return most
 
 
-people = set([p for (p, _) in partners.keys()])
+people = set([p1 for (p1, p2) in partners.keys()])
 print "part 1.  Max hapiness = %d" % (max_hapiness(people))
 
 people |= set(['Lee'])
