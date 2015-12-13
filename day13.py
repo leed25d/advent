@@ -13,12 +13,12 @@ for line in open('day13.data'):
 
 def max_hapiness(people):
     most = -sys.maxint - 1
-    for seating in itertools.permutations(people):
-        seating += (seating[0],)
+    for arrangement in itertools.permutations(people):
+        arrangement += (arrangement[0],)
         hapiness = 0
-        for i in xrange(len(seating) - 1):
-            hapiness += partners[(seating[i], seating[i + 1])]
-            hapiness += partners[(seating[i + 1], seating[i])]
+        for i in xrange(len(arrangement) - 1):
+            hapiness += partners[(arrangement[i], arrangement[i + 1])]
+            hapiness += partners[(arrangement[i + 1], arrangement[i])]
             most = max(hapiness, most)
     return most
 
