@@ -2,7 +2,6 @@
 import collections
 import itertools
 import re
-import sys
 
 partners = collections.defaultdict(int)
 for line in open('day13.data'):
@@ -12,7 +11,7 @@ for line in open('day13.data'):
 
 
 def max_hapiness(people):
-    most = -sys.maxint - 1
+    most = None
     for arrangement in itertools.permutations(people):
         arrangement += (arrangement[0],)
         hapiness = 0
