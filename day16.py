@@ -51,3 +51,7 @@ ary = aunts[:]
 for elem, op in part2_ticker:
     ary = [line for line in ary if checkit(elem, op, line)]
 print "part 2. %s" % str(ary)
+
+##                              A N S W E R S
+##  part 1. ['Sue 40: vizslas: 0, cats: 7, akitas: 0']
+##  part 2. ['Sue 241: cars: 2, pomeranians: 1, samoyeds: 2']
